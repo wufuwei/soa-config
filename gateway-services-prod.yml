@@ -1,0 +1,30 @@
+# Define the port where the API gateway server would be running
+server:
+  port: 8765
+  tomcat: 
+    access-log-enabled: true
+    access-log-pattern: ${spring.application.name}|1|%a|%A|%t|%m|%D|%s|%U|%q
+    accesslog: 
+      directory: ./logs/accesslogs  
+      prefix: ${spring.application.name}
+logging: 
+  path: ./logs/runlogs
+  file: ${spring.application.name}.log
+
+zuul:
+  routes:
+    ota-services: /api/ota/**
+    
+
+Spring: 
+ redis: 
+  database: 0
+  host: 192.168.50.249
+  password: 
+  port: 6379
+  pool: 
+   max-idle: 8
+   min-idle: 0
+   max-active: 8
+   max-wait: -1  
+
