@@ -17,7 +17,7 @@ zuul:
 
     
 
-Spring: 
+spring: 
  redis: 
   database: 0
   host: 192.168.50.249
